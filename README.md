@@ -20,10 +20,18 @@ var ColorThief = require('color-thief-jimp');
 ### Get the dominant color from an image
 ```js
 var ColorThief = require('color-thief-jimp');
+var Jimp = require('jimp');
 
-// getColor(sourceImage[, quality])
-var dominantColor = ColorThief.getColor(sourceImage);
-// dominantColor = [intRed, intGreen, intBlue]
+Jimp.read(imageFilepathOrUrl, (err, sourceImage) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  // getColor(sourceImage[, quality])
+  var dominantColor = ColorThief.getColor(sourceImage);
+  // dominantColor = [intRed, intGreen, intBlue]
+});
 ```
 
 ### Build a color palette from an image
@@ -32,10 +40,18 @@ In this example, we build an 8 color palette.
 
 ```js
 var ColorThief = require('color-thief-jimp');
+var Jimp = require('jimp');
 
-// getPalette(sourceImage[, colorCount, quality])
-var palette = ColorThief.getPalette(sourceImage, 8);
-// palette = [ [intRed, intGreen, intBlue], [intRed, intGreen, intBlue], ... ]
+Jimp.read(imageFilepathOrUrl, (err, sourceImage) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  // getPalette(sourceImage[, colorCount, quality])
+  var palette = ColorThief.getPalette(sourceImage, 8);
+  // palette = [ [intRed, intGreen, intBlue], [intRed, intGreen, intBlue], ... ]
+});
 ```
 
 ## Changelog

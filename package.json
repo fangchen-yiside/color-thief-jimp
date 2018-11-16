@@ -29,6 +29,6 @@
   ],
   "main": "src/color-thief.js",
   "dependencies": {
-    "jimp": "^0.2.21"
+    "jimp": "^0.5.6"
   }
 }
